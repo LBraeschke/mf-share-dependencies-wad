@@ -1,0 +1,28 @@
+{
+  "name": "mf-dependency-share-examples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/LBraeschke/mf-dependency-share-examples.git",
+  "author": "Lucas Braeschke <lucas.braeschke@zeiss.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "umd/*",
+    "module-federation/*",
+    "import-maps/*"
+  ],
+  "scripts": {
+    "build": "lerna run build"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.4.4",
+    "esbuild": "^0.20.2",
+    "lerna": "^4.0.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "rxjs": "^7.8.1"
+  }
+}
