@@ -1,1 +1,1 @@
-export * from './umd-app-one-component'
+export * from './app-one-component'

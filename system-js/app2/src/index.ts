@@ -1,1 +1,1 @@
-export * from './umd-app-two-component'
+export * from './app-two-component'

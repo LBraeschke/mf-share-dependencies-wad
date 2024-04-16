@@ -1,1 +1,1 @@
-export * from './mf-app-one-component';
+export * from './app-one-component';

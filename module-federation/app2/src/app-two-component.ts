@@ -9,21 +9,7 @@ declare const __webpack_share_scopes__: { default: Scope };
 @customElement("mf-app-two")
 export class MyEl extends LitElement {
   private _getDataTask = new Task(this, {
-    task: async () => {
-      await __webpack_init_sharing__("default");
-      console.log(JSON.stringify(__webpack_share_scopes__.default))
-      const script = document.createElement("script");
-      script.src = "../app1/dist/counter.js";
-
-      script.onload = async () => {
-        const container = (window as any)['app1'];
-        await container.init(__webpack_share_scopes__.default);
-        console.log((await container.get("./Counter"))());
-        this.requestUpdate()
-      };
-
-      document.body.appendChild(script);
-    },
+    task: loadCounter,
     args: () => [],
   });
 
@@ -33,7 +19,7 @@ export class MyEl extends LitElement {
     // lib has to be used other wise it will not be distributed
     // https://github.com/webpack/webpack/issues/15164
     interval(1000).subscribe(async (val) => {
-      this.requestUpdate()
+      this.requestUpdate();
     });
   }
 
@@ -41,6 +27,19 @@ export class MyEl extends LitElement {
   counter = 0;
 
   render() {
-    return html`<p>Counter2 : <mf-shared-counter></mf-shared-counter></p>`;
+    return html`<p>Shared Counter : <mf-shared-counter></mf-shared-counter></p>`;
   }
+}
+async function loadCounter() {
+  await __webpack_init_sharing__("default");
+  const script = document.createElement("script");
+  script.src = "../app1/dist/counter.js";
+
+  script.onload = async () => {
+    const container = (window as any)["app1"];
+    await container.init(__webpack_share_scopes__.default);
+    (await container.get("./Counter"))();
+  };
+
+  document.body.appendChild(script);
 }
