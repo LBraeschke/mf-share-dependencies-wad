@@ -1,0 +1,1 @@
+export * from './umd-app-two-component'
