@@ -1,7 +1,7 @@
 export default {
     open: true,
     watch: true,
-    port: 8002,
+    port: 8004,
     nodeResolve: false,
     appIndex: './index.html',
     rootDir: '../'

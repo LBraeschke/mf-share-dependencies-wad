@@ -9,6 +9,7 @@
   "workspaces": [
     "umd/*",
     "module-federation/*",
+    "system-js/*",
     "import-maps/*"
   ],
   "scripts": {
