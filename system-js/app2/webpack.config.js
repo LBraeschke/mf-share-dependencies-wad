@@ -21,6 +21,7 @@ module.exports = {
     ],
   },
   externals: {
-    rxjs: 'rxjs'
+    rxjs: 'rxjs',
+    lit: 'lit'
   },
 };
