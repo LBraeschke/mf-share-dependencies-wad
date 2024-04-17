@@ -6,7 +6,7 @@ const config = {
   bundle: true,
   minify: false,
   sourcemap: true,
-  external: ["rxjs"],
+  external: ["rxjs", "lit"],
   outdir: "dist",
   target: "chrome116",
 };
