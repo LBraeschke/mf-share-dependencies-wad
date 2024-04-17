@@ -28,8 +28,22 @@ module.exports = {
       },
       shared: {
         rxjs: {
+          eager: true,
           singleton: true,
         },
+        lit: {
+          eager: true,
+          singleton: true,
+        },
+        '@lit/reactive-element': {
+          eager: true,
+          singleton: true,
+        }
+        ,
+        'lit/decorators.js': {
+          eager: true,
+          singleton: true,
+        }
       },
     }),
   ],
