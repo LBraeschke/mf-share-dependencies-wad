@@ -1,8 +1,6 @@
 {
   "packages": [
-    "umd/*",
     "module-federation/*",
-    "system-js/*",
     "import-maps/*"
   ],
   "version": "0.0.0"

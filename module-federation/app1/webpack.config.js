@@ -1,5 +1,4 @@
-const { ModuleFederationPlugin } = require("webpack").container;
-const path = require("path");
+const { ModuleFederationPlugin } = require("@module-federation/enhanced/webpack");
 
 module.exports = {
   entry: "./src/index.ts",
@@ -8,7 +7,7 @@ module.exports = {
     extensions: [".ts", ".js", ".json"],
   },
   output: {
-    publicPath: '../app1/dist/',
+    publicPath: "./dist/",
   },
   module: {
     rules: [
@@ -24,7 +23,7 @@ module.exports = {
       name: "app1",
       filename: "counter.js",
       exposes: {
-        "./Counter": "./src/counter.ts",
+        CounterApp1: "./src/app-one-component.ts",
       },
       shared: {
         rxjs: {
@@ -35,15 +34,14 @@ module.exports = {
           eager: true,
           singleton: true,
         },
-        '@lit/reactive-element': {
+        "@lit/reactive-element": {
           eager: true,
           singleton: true,
-        }
-        ,
-        'lit/decorators.js': {
+        },
+        "lit/decorators.js": {
           eager: true,
           singleton: true,
-        }
+        },
       },
     }),
   ],

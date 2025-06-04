@@ -7,13 +7,12 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "umd/*",
     "module-federation/*",
-    "system-js/*",
     "import-maps/*"
   ],
   "scripts": {
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "serve": "lerna run serve"
   },
   "devDependencies": {
     "@web/dev-server": "^0.4.4",

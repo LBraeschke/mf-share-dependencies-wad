@@ -8,10 +8,12 @@
     "build:watch": "webpack --watch"
   },
   "devDependencies": {
+    "@module-federation/enhanced": "^0.14.3",
     "ts-loader": "^9.5.1",
     "typescript": "^5.4.5",
     "webpack-cli": "^5.1.4",
     "webpack": "^5.91.0"
+
   },
   "dependencies": {
     "@lit/task": "^1.0.0",
