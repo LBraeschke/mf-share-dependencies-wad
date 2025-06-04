@@ -1,13 +1,14 @@
-const { ModuleFederationPlugin } = require("@module-federation/enhanced/webpack");
+const {
+  ModuleFederationPlugin,
+} = require("@module-federation/enhanced/webpack");
 
 module.exports = {
-  entry: "./src/index.ts",
   mode: "development",
   resolve: {
     extensions: [".ts", ".js", ".json"],
   },
   output: {
-    publicPath: "./dist/",
+    publicPath: "../app1/dist/",
   },
   module: {
     rules: [
@@ -23,23 +24,19 @@ module.exports = {
       name: "app1",
       filename: "counter.js",
       exposes: {
-        CounterApp1: "./src/app-one-component.ts",
+        ".": "./src/app-one-component.ts",
       },
       shared: {
         rxjs: {
-          eager: true,
-          singleton: true,
+          singleton: false,
         },
         lit: {
-          eager: true,
           singleton: true,
         },
         "@lit/reactive-element": {
-          eager: true,
           singleton: true,
         },
         "lit/decorators.js": {
-          eager: true,
           singleton: true,
         },
       },

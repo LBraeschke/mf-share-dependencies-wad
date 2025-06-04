@@ -1,7 +1,8 @@
-const { ModuleFederationPlugin } = require("@module-federation/enhanced/webpack");
+const {
+  ModuleFederationPlugin,
+} = require("@module-federation/enhanced/webpack");
 
 module.exports = {
-  entry: "./src/index.ts",
   mode: "development",
   resolve: {
     extensions: [".ts", ".js", ".json"],
@@ -23,23 +24,19 @@ module.exports = {
       name: "app2",
       filename: "counter.js",
       exposes: {
-        CounterApp2: "./src/app-two-component.ts",
+        ".": "./src/app-two-component.ts",
       },
       shared: {
         rxjs: {
-          eager: true,
-          singleton: true,
+          singleton: false,
         },
         lit: {
-          eager: true,
           singleton: true,
         },
         "@lit/reactive-element": {
-          eager: true,
           singleton: true,
         },
         "lit/decorators.js": {
-          eager: true,
           singleton: true,
         },
       },
