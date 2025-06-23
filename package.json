@@ -9,10 +9,9 @@
   "workspaces": [
     "module-federation/*",
     "import-maps/*"
-  ],
-  "scripts": {
+  ],  "scripts": {
     "build": "lerna run build",
-    "serve": "lerna run serve"
+    "serve": "lerna run serve --parallel"
   },
   "devDependencies": {
     "@web/dev-server": "^0.4.4",

@@ -17,15 +17,14 @@ init({
       type: "module",
     },
   ],
-  shareStrategy: "version-first",
   shared: {
     rxjs: {
-      version: "6.8.1",
+      version: "7.8.1",
       scope: "default",
       lib: () => rxjs,
       shareConfig: {
         singleton: false,
-        requiredVersion: "^6.8.1",
+        requiredVersion: "^7.8.1",
       },
     },
     lit: {

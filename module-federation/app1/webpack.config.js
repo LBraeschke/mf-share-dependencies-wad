@@ -29,6 +29,7 @@ module.exports = {
       shared: {
         rxjs: {
           singleton: false,
+          requiredVersion: "^6.6.1",
         },
         lit: {
           singleton: true,

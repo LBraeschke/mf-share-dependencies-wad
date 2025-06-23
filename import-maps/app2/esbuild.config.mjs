@@ -1,12 +1,15 @@
 import * as esbuild from "esbuild";
 
 const config = {
-  format: 'esm',
+  format: "esm",
   entryPoints: ["./src/index.ts"],
   bundle: true,
   minify: false,
   sourcemap: true,
-  external: ["rxjs", "lit"],
+  alias: {
+    rxjs: "rxjs@7.8.x",
+  },
+  external: ["rxjs@7.8.x", "lit"],
   outdir: "dist",
   target: "chrome116",
 };
